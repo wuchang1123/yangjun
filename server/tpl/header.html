@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>留言本</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="/style.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+	<div id="logo">
+		<h1><a href="<{spUrl}>">留言本2.0</a></h1>
+		<p><em>演示权限控制扩展的留言本实例</em></p>
+	</div>
+	<hr />
+	<!-- end #logo -->
+	<div id="header">
+		<div id="menu">
+			<ul>
+				<li><a href="<{spUrl c=main a=index}>" class="first">首页</a></li>
+				<li><a href="<{spUrl c=admin a=index}>">管理</a></li>
+<{if "" != $smarty.session.userinfo.uname}>
+				<li><a href="<{spUrl c=main a=post}>">留言</a></li>		
+				<li><a href="<{spUrl c=main a=logout}>">退出</a></li>
+<{else}>
+				<li><a href="<{spUrl c=main a=login}>">登录</a></li>
+<{/if}>
+			</ul>
+		</div>
+		<!-- end #menu -->
+	</div>
+	<!-- end #header -->
+	<!-- end #header-wrapper -->
